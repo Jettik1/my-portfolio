@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Подключение кастомных тем */
+html.light {
+  --background: theme('colors.light.background');
+  --primary: theme('colors.light.primary');
+  --header: theme('colors.light.header');
+  --button: theme('colors.light.button');
+  --button-text: theme('colors.light.buttonText');
+}
+
+html.dark {
+  --background: theme('colors.dark.background');
+  --primary: theme('colors.dark.primary');
+  --header: theme('colors.dark.header');
+  --button: theme('colors.dark.button');
+  --button-text: theme('colors.dark.buttonText');
+}
+
+.bg-background {
+  background-color: var(--background);
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.bg-header {
+  background-color: var(--header);
+}
+
+.bg-button {
+  background-color: var(--button);
+}
+
+.text-buttonText {
+  color: var(--button-text);
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
