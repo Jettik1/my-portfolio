@@ -2,12 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 /* Подключение кастомных тем */
-html.light {
+/* html.light {
   --background: theme('colors.light.background');
   --primary: theme('colors.light.primary');
   --header: theme('colors.light.header');
@@ -16,6 +12,27 @@ html.light {
 }
 
 html.dark {
+  --background: theme('colors.dark.background');
+  --primary: theme('colors.dark.primary');
+  --header: theme('colors.dark.header');
+  --button: theme('colors.dark.button');
+  --button-text: theme('colors.dark.buttonText');
+} */
+
+[data-theme='light'] {
+  --background: theme('colors.light.background');
+  --primary: theme('colors.light.primary');
+  --header: theme('colors.light.header');
+  --button: #007bff;
+  --button-text: theme('colors.light.buttonText');
+}
+
+[data-theme='dark'] {
+  --background: #282c34;
+  --primary: #ffffff;
+  --header: #1a1a1a;
+  --button: #4caf50;
+  --button-text: #ffffff;
   --background: theme('colors.dark.background');
   --primary: theme('colors.dark.primary');
   --header: theme('colors.dark.header');
