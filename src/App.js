@@ -95,7 +95,7 @@ const App = () => {
   return (
     <div className="min-h-screen bg-background text-primary">
       <header className="p-4 bg-header flex justify-between items-center">
-        <h1 className="text-xl font-bold">Мой Портфолио</h1>
+        <h1 className="text-xl font-bold">My Portfolio</h1>
         <button
           onClick={toggleTheme}
           className="px-4 py-2 bg-button text-buttonText rounded"
