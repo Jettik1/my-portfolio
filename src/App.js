@@ -16,14 +16,14 @@ const projects = [
   },
   {
     id: 2,
-    name: 'Project Two',
-    description: 'A short description of Project Two.',
-    link: 'https://github.com/username/project-two',
+    name: 'SVG to PDF Converter',
+    description: 'Just a converter for SVG to PDF',
+    link: 'https://svg-to-pdf-khaki.vercel.app/',
   },
   {
     id: 3,
-    name: 'Project Three',
-    description: 'A short description of Project Three.',
+    name: 'Project Three Coming Soon',
+    description: 'A short description',
     link: 'https://github.com/username/project-three',
   },
 ]
