@@ -74,7 +74,7 @@ const App = () => {
   useEffect(() => {
     // Проверяем сохранённую тему и задаём её
     const savedTheme = localStorage.getItem('theme') || 'light'
-    document.documentElement.classList.add(savedTheme)
+    document.documentElement.setAttribute('data-theme', savedTheme)
     setTheme(savedTheme)
 
     // Обновляем класс Swiper (если используется)
