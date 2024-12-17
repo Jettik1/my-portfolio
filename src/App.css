@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .App {
   text-align: center;
 }
@@ -35,4 +39,103 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Swiper styles */
+.swiper {
+  position: relative;
+  z-index: 1;
+  user-select: text;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.swiper-button-prev {
+  left: -30px;
+}
+
+.swiper-button-next {
+  right: -30px;
+}
+
+.swiper-slide-content {
+  padding: 20px 40px;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--primary);
+}
+
+.swiper-slide a {
+  position: relative;
+  display: inline-block;
+  z-index: 10;
+  text-decoration: none;
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.swiper-slide a:hover {
+  background-color: var(--primary);
+}
+
+/* Prevent overlap by creating space around arrows */
+.swiper-slide {
+  padding: 0 50px; /* Добавляем отступ для стрелок */
+  user-select: text;
+}
+
+/* Themes */
+[data-theme='light'] .swiper-button-next,
+[data-theme='light'] .swiper-button-prev {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: black;
+}
+
+[data-theme='light'] .swiper-pagination-bullet-active {
+  background-color: var(--primary);
+}
+
+[data-theme='light'] .swiper-pagination-bullet {
+  background-color: #ff5f02;
+}
+
+[data-theme='dark'] .swiper-button-next,
+[data-theme='dark'] .swiper-button-prev {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+}
+
+[data-theme='dark'] .swiper-pagination-bullet-active {
+  background-color: var(--primary);
+}
+
+[data-theme='dark'] .swiper-pagination-bullet {
+  background-color: #61dafb;
+}
+
+.swiper-slide * {
+  user-select: text !important; /* Принудительно разрешаем выделение текста для всех дочерних элементов */
+}
+
+.swiper-wrapper {
+  user-select: text !important; /* Для совместимости с другими стилями Swiper */
+}
+
+.swiper-container {
+  pointer-events: auto; /* Убедитесь, что текст можно кликать/выделять */
 }

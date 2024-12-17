@@ -1,4 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+import { Navigation, Pagination, Autoplay } from 'swiper/modules'
+import './index.css'
+import './App.css'
 
 const projects = [
   {
@@ -9,14 +16,14 @@ const projects = [
   },
   {
     id: 2,
-    name: 'Project Two',
-    description: 'A short description of Project Two.',
-    link: 'https://github.com/username/project-two',
+    name: 'SVG to PDF Converter',
+    description: 'Just a converter for SVG to PDF',
+    link: 'https://svg-to-pdf-khaki.vercel.app/',
   },
   {
     id: 3,
-    name: 'Project Three',
-    description: 'A short description of Project Three.',
+    name: 'Project Three Coming Soon',
+    description: 'A short description',
     link: 'https://github.com/username/project-three',
   },
 ]
@@ -25,25 +32,38 @@ const ProjectCard = ({ project }) => (
   <div className="border rounded-lg shadow-lg p-4 hover:shadow-2xl transition-shadow">
     <h2 className="text-xl font-bold">{project.name}</h2>
     <p className="text-gray-500">{project.description}</p>
-    <a
-      href={project.link}
-      className="text-blue-500 hover:underline"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      View Project
-    </a>
+    <button className="button btn-primary">
+      <a
+        href={project.link}
+        class="inline-block text-blue-500 hover:underline px-5 py-3 bg-primary text-background rounded hover:bg-primary-hover"
+      >
+        View Project
+      </a>
+    </button>
   </div>
 )
 
 const ProjectsSection = () => (
   <section className="py-8">
     <h2 className="text-2xl font-bold text-center mb-6">My Projects</h2>
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <Swiper
+      modules={[Navigation, Pagination, Autoplay]}
+      navigation
+      pagination={{ clickable: true }}
+      autoplay={{
+        delay: 5000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      }}
+      loop
+      className="max-w-lg mx-auto"
+    >
       {projects.map((project) => (
-        <ProjectCard key={project.id} project={project} />
+        <SwiperSlide key={project.id}>
+          <ProjectCard project={project} />
+        </SwiperSlide>
       ))}
-    </div>
+    </Swiper>
   </section>
 )
 
@@ -52,15 +72,22 @@ const App = () => {
 
   // Сохраняем тему в localStorage для сохранения настроек пользователя
   useEffect(() => {
+    // Проверяем сохранённую тему и задаём её
     const savedTheme = localStorage.getItem('theme') || 'light'
-    setTheme(savedTheme)
     document.documentElement.classList.add(savedTheme)
-  }, [])
+    setTheme(savedTheme)
+
+    // Обновляем класс Swiper (если используется)
+    const swiperEl = document.querySelector('.swiper')
+    if (swiperEl) {
+      swiperEl.classList.remove('light', 'dark')
+      swiperEl.classList.add(savedTheme)
+    }
+  }, []) // Выполняется только один раз при монтировании
 
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light'
-    document.documentElement.classList.remove(theme)
-    document.documentElement.classList.add(newTheme)
+    document.documentElement.setAttribute('data-theme', newTheme)
     setTheme(newTheme)
     localStorage.setItem('theme', newTheme)
   }
@@ -68,7 +95,7 @@ const App = () => {
   return (
     <div className="min-h-screen bg-background text-primary">
       <header className="p-4 bg-header flex justify-between items-center">
-        <h1 className="text-xl font-bold">Мой Портфолио</h1>
+        <h1 className="text-xl font-bold">My Portfolio</h1>
         <button
           onClick={toggleTheme}
           className="px-4 py-2 bg-button text-buttonText rounded"

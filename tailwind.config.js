@@ -10,13 +10,15 @@ module.exports = {
           header: '#fce6c9', // Нежный персиковый для хедера
           button: '#f4c095', // Светло-оранжевый для кнопки
           buttonText: '#3a2a20', // Темно-коричневый для текста на кнопке
+          bulletBackground: '#ff5f02',
         },
         dark: {
           background: '#1a202c', // Темный фон
           primary: '#f7fafc', // Светлый текст
-          header: '#2d3748', // Темный хедер
-          button: '#4a5568', // Серый для кнопки
+          header: '#2d3748', // Тёмный хедер
+          button: '#4caf50', // Зелёный для кнопки
           buttonText: '#edf2f7', // Светлый текст на кнопке
+          bulletBackground: '#61dafb',
         },
       },
     },
