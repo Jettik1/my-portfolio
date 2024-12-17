@@ -24,7 +24,7 @@ const projects = [
     id: 3,
     name: 'Project Three Coming Soon',
     description: 'A short description',
-    link: 'https://github.com/username/project-three',
+    link: 'https://jettik1-portfolio.vercel.app/',
   },
 ]
 
