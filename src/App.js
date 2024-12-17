@@ -1,10 +1,10 @@
+import './index.css'
 import React, { useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import { Navigation, Pagination, Autoplay } from 'swiper/modules'
-import './index.css'
 import './App.css'
 
 const projects = [
@@ -24,7 +24,7 @@ const projects = [
     id: 3,
     name: 'Project Three Coming Soon',
     description: 'A short description',
-    link: 'https://github.com/username/project-three',
+    link: 'https://jettik1-portfolio.vercel.app/',
   },
 ]
 
@@ -68,7 +68,7 @@ const ProjectsSection = () => (
 )
 
 const App = () => {
-  const [theme, setTheme] = useState('light')
+  const [theme, setTheme] = useState('dark')
 
   // Сохраняем тему в localStorage для сохранения настроек пользователя
   useEffect(() => {
