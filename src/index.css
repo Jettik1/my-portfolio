@@ -23,7 +23,7 @@ html.dark {
   --background: theme('colors.light.background');
   --primary: theme('colors.light.primary');
   --header: theme('colors.light.header');
-  --button: #007bff;
+  --button: #e5ff00;
   --button-text: theme('colors.light.buttonText');
 }
 
