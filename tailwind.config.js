@@ -23,6 +23,6 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require('daisyui')],
   darkMode: 'class', // Включаем переключение темы через класс
 }
