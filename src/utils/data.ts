@@ -14,7 +14,14 @@ export const projects = [
   },
   {
     id: 3,
-    name: 'Project Three Coming Soon',
+    name: 'Just a News CRUD',
+    description: 'News CRUD w/ localstorage',
+    link: 'https://react-crud-rosy-rho.vercel.app/',
+    github: 'https://github.com/Jettik1/react-crud',
+  },
+  {
+    id: 4,
+    name: 'Project Coming Soon??',
     description: 'A short description',
     link: 'https://jettik1-portfolio.vercel.app/',
     github: 'https://github.com/Jettik1/my-portfolio',
